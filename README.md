@@ -6,10 +6,18 @@ It only displays the folders where there security is set and skips folders that 
 
 The security is displayed for al the users/groups that is set in a povottable.
 The second part of the report shows the members of the groups with som aditional info per user, like description & last logontime
-script alse generates a logfile in the outputpath 
+script alse generates a logfile in the outputpath.
 
 ## Requirements
-This script needs "Quest Active Directory powershell module"
+This script needs "Quest Active Directory powershell module".
 This can be found here: http://www.powershelladmin.com/wiki/Quest_ActiveRoles_Management_Shell_Download
 
-You also need to have access tot the folders you want to analyse, so this script is best ran as a user who is member of the (domain) administrator group
+You also need to have access tot the folders you want to analyse, so this script is best ran as a user who is member of the (domain) administrator group.
+
+## Example
+create a report of "\\server\data\HR" and is 's subfolders and save it as "\\server\NTFS-reports\HR-securityreport.xlsx"
+do not include the AD group "SupportGroup" and the AD account "ApplicationAccount".
+If the group "domain users" is found, do not display it's members.
+
+`Export-Foldersecurity -unc "\\server\data\HR" -OutputPath "\\server\NTFS-reports\HR-securityreport.xlsx" -ExcludedObjects "SupportGroup","ApplicationAccount" -NoGroupmembershipQuery "Domain users"`
+ 
