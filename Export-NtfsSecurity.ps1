@@ -209,6 +209,9 @@ function Write-Log {
 	$logline = "$(Get-Date -Format "yyyy-MM-dd hh:mm:ss"): $text"
 	if (!($NoLogfile)){
 		$LogFile =  $OutputPath+"logs\"+(($unc -split "\\")[-1])+".log"
+		if (!(Test-Path $OutputPath+"logs\")){
+			mkdir $OutputPath"logs\" -Force
+		}
 		$logline >> $LogFile
 	}
 	write-host $logline
@@ -587,7 +590,7 @@ $package.Workbook.Properties.Author = $localize.Owner
 $package.Workbook.Properties.Comments = "$($localize.ReportTitle) $unc"
 
 # create the worksheet we will work on, this contains the spreadsheet cells
-$worksheet = $package.Workbook.Worksheets.Add("NTFS Secuity")
+$worksheet = $package.Workbook.Worksheets.Add("NTFS Security")
 
 
 # populate the cells with data
