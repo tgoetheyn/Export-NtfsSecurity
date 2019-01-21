@@ -15,7 +15,7 @@ This can be found here: http://www.powershelladmin.com/wiki/Quest_ActiveRoles_Ma
 You also need to have access tot the folders you want to analyse, so this script is best ran as a user who is member of the (domain) administrator group.
 
 ## Example
-create a report of "\\server\data\HR" and is 's subfolders and save it as "\\server\NTFS-reports\HR-securityreport.xlsx"
+create a report of `\\server\data\HR` and its subfolders and save it as `\\server\NTFS-reports\HR-securityreport.xlsx`,
 do not include the AD group "SupportGroup" and the AD account "ApplicationAccount".
 If the group "domain users" is found, do not display it's members.
 
