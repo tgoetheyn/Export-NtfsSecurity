@@ -9,8 +9,11 @@ The second part of the report shows the members of the groups with some aditiona
 script also generates a logfile in the outputpath.
 
 ## Requirements
-This script needs "Quest Active Directory powershell module".
-This can be found here: http://www.powershelladmin.com/wiki/Quest_ActiveRoles_Management_Shell_Download
+This script needs the following powershell modules:
+
+* NTFSSecurity
+* ActiveDirectory
+* SQLServer
 
 You also need to have access tot the folders you want to analyse, so this script is best ran as a user who is member of the (domain) administrator group.
 
